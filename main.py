@@ -21,8 +21,8 @@ class Test(QMainWindow):
         self.label.setPixmap(canvas)
 
     def circle(self):
-        x, y = [randint(10, 490) for i in range(2)]
-        a = randint(10, 90)
+        x, y = [randint(10, 400) for i in range(2)]
+        a = randint(10, 80)
         painter = QPainter(self.label.pixmap())
         pen = QPen()
         pen.setWidth(2)
