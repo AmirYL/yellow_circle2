@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QGridLayout, QLabel, QPushButton
 from PyQt5.QtGui import QPainter, QPixmap, QPen, QColor
 from PyQt5 import uic
 from random import randint
@@ -8,7 +8,14 @@ from random import randint
 class Test(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.initUI()
+
+    def initUI(self):
+        self.setGeometry(0, 0, 546, 607)
+        self.label = QLabel(self)
+        self.label.setGeometry(20, 10, 501, 501)
+        self.pushButton = QPushButton("Нажми!", self)
+        self.pushButton.move(220, 520)
         self.pushButton.clicked.connect(self.circle)
         canvas = QPixmap(500, 500)
         self.label.setPixmap(canvas)
