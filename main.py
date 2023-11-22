@@ -15,11 +15,11 @@ class Test(QMainWindow):
 
     def circle(self):
         x, y = [randint(10, 490) for i in range(2)]
-        a = randint(10, 80)
+        a = randint(10, 90)
         painter = QPainter(self.label.pixmap())
         pen = QPen()
         pen.setWidth(2)
-        pen.setColor(QColor('yellow'))
+        pen.setColor(QColor(randint(0, 255), randint(0, 255), randint(0, 255)))
         painter.setPen(pen)
         painter.drawEllipse(x, y, a, a)
         painter.end()
